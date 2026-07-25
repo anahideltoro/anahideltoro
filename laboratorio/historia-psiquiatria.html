@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Video educativo sobre la historia de la psiquiatría y la evolución de las formas de comprender, clasificar y diagnosticar la salud mental.">
+  <title>La historia de la psiquiatría | Laboratorio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root{--ivory:#fbfaf7;--white:#fff;--graphite:#242628;--muted:#6f6c68;--teal:#0d5656;--burgundy:#9c1625;--paper:#f3eee8;--line:#ded9d2;--shadow:0 18px 50px rgba(37,35,31,.09)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ivory);color:var(--graphite);font-family:"DM Sans",system-ui,sans-serif;line-height:1.65}img{display:block;width:100%}a{color:inherit;text-decoration:none}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:"Playfair Display",Georgia,serif;letter-spacing:-.035em}.shell{width:min(1320px,calc(100% - 64px));margin-inline:auto}.section{padding:100px 0}.eyebrow{margin:0 0 16px;color:var(--teal);font-size:.76rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+    .site-header{position:sticky;top:16px;z-index:60;width:min(1440px,calc(100% - 32px));min-height:96px;margin:16px auto 0;padding:16px 20px 16px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;background:rgba(251,250,247,.94);border:1px solid var(--line);border-radius:30px;backdrop-filter:blur(14px)}.brand{width:150px}.brand img{height:56px;object-fit:contain;object-position:left center}.main-nav{display:flex;align-items:center;gap:25px;font-weight:700}.main-nav a{font-size:.92rem;white-space:nowrap}.nav-cta{padding:13px 22px;color:#fff;background:var(--burgundy);border-radius:999px}.menu-button{display:none;width:46px;height:46px;padding:0;place-content:center;gap:5px;border:1px solid var(--line);border-radius:50%;background:var(--white)}.menu-button span{width:20px;height:2px;background:var(--graphite)}
+    .lab-hero{padding:94px 0 72px;display:grid;grid-template-columns:.88fr 1.12fr;gap:76px;align-items:center}.back-link{display:inline-block;margin-bottom:46px;color:var(--muted);font-size:.9rem}.lab-hero h1{margin-bottom:24px;font-size:clamp(4.4rem,6.8vw,7rem);line-height:.96}.lab-intro{max-width:650px;color:var(--teal);font-size:1.18rem;font-weight:600}.lab-meta{margin-top:40px;padding-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;border-top:1px solid var(--line)}.lab-meta strong,.lab-meta span{display:block}.lab-meta strong{color:var(--teal);font-size:.75rem;text-transform:uppercase;letter-spacing:.12em}.lab-meta span{margin-top:6px;color:var(--muted);font-size:.9rem}.hero-image{overflow:hidden;min-height:600px;border-radius:0 0 0 120px;background:var(--paper);box-shadow:var(--shadow)}.hero-image img{height:600px;object-fit:cover}
+    .two-column,.questions-grid,.reflection{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start}.two-column h2,.questions-grid h2,.reflection h2{font-size:clamp(3.2rem,5vw,5rem);line-height:1}.copy,.questions-copy,.reflection-copy{color:var(--muted);font-size:1.05rem}.copy p{margin-bottom:1.4em}.note{margin-top:28px;padding:24px 26px;color:var(--graphite);background:var(--paper);border-left:4px solid var(--burgundy);border-radius:0 16px 16px 0}
+    .video-section{background:#f6f4f1}.video-heading{max-width:880px;margin-bottom:40px}.video-heading h2{margin-bottom:18px;font-size:clamp(3.2rem,5vw,5rem);line-height:1.02}.video-heading p{color:var(--muted);font-size:1.03rem}.video-shell{overflow:hidden;background:var(--white);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}.video-toolbar{padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line)}.video-toolbar strong{font-family:"Playfair Display",Georgia,serif;font-size:1.34rem}.video-toolbar a{color:var(--teal);font-size:.86rem;font-weight:700}.video-frame{position:relative;padding-bottom:56.25%;height:0;background:#111}.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .decisions-heading{max-width:860px;margin-bottom:40px}.decisions-heading h2{margin-bottom:16px;font-size:clamp(3.2rem,5vw,5rem);line-height:1}.decisions-heading p{color:var(--muted)}.decision-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.decision-card{min-height:250px;padding:28px 26px;display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);border-radius:18px;transition:transform .25s ease,box-shadow .25s ease}.decision-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}.decision-dot{width:46px;height:46px;margin-bottom:28px;display:block;border-radius:50%;background:#e3efee}.decision-card:nth-child(2) .decision-dot{background:#f1e5eb}.decision-card:nth-child(3) .decision-dot{background:#f2ebd7}.decision-card:nth-child(4) .decision-dot{background:#e8e7e5}.decision-card h3{margin-bottom:14px;font-size:1.48rem;line-height:1.14}.decision-card p{margin:0;color:var(--muted);font-size:.92rem;line-height:1.6}
+    .questions-section{background:var(--paper)}.question-list{margin-top:30px;display:grid;gap:14px}.question-card{padding:22px 24px;background:var(--white);border:1px solid var(--line);border-radius:16px;font-family:"Playfair Display",Georgia,serif;font-size:1.35rem;line-height:1.35;color:var(--graphite)}
+    .reflection{grid-template-columns:.72fr 1.28fr;gap:78px}.reflection-copy{padding-top:10px;line-height:1.75}.design-notebook{margin-top:34px;padding:28px 30px;background:var(--paper);border:1px solid var(--line);border-radius:18px}.design-notebook strong{display:block;margin-bottom:12px;color:var(--burgundy);text-transform:uppercase;letter-spacing:.14em;font-size:.76rem}.design-notebook p{margin:0;color:var(--graphite);font-family:"Playfair Display",Georgia,serif;font-size:1.5rem;line-height:1.45}
+    .next-resource{margin-bottom:80px;padding:48px 0;display:flex;justify-content:space-between;align-items:center;gap:30px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.next-resource small{display:block;margin-bottom:8px;color:var(--muted)}.next-resource strong{font-family:"Playfair Display",Georgia,serif;font-size:1.5rem}.site-footer{padding:0 0 48px;display:flex;justify-content:space-between;color:var(--muted)}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}.reveal.is-visible{opacity:1;transform:none}
+    @media(max-width:1050px){.main-nav{gap:14px}.main-nav a{font-size:.85rem}.lab-hero{grid-template-columns:1fr}.hero-image,.hero-image img{height:520px;min-height:520px}.decision-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:860px){.menu-button{display:grid}.main-nav{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;padding:22px;flex-direction:column;align-items:stretch;background:var(--ivory);border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}.main-nav.is-open{display:flex}.nav-cta{text-align:center}.two-column,.questions-grid,.reflection{grid-template-columns:1fr;gap:42px}}
+    @media(max-width:640px){.shell{width:min(100% - 24px,1320px)}.section{padding:76px 0}.site-header{width:calc(100% - 16px);top:8px;margin-top:8px;min-height:auto;padding:12px 14px}.brand{width:124px}.brand img{height:46px}.lab-hero{padding-top:58px;gap:36px}.lab-hero h1{font-size:3.75rem}.hero-image,.hero-image img{height:420px;min-height:420px}.lab-meta,.decision-grid{grid-template-columns:1fr}.video-toolbar{align-items:flex-start;flex-direction:column}.next-resource,.site-footer{align-items:flex-start;flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+  
+/* Accesibilidad de teclado */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--burgundy);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+/* Menú móvil accesible en pantallas bajas */
+@media(max-width:860px){
+  .main-nav.is-open{
+    max-height:calc(100vh - 120px);
+    overflow-y:auto;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Volver al inicio"><img src="../assets/logo-anahi-del-toro.png" alt="Anahí Del Toro"></a>
+    <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="../index.html">Inicio</a><a href="../index.html#en-que-creo">En qué creo</a><a href="../casos/index.html">Casos</a><a href="../index.html#como-trabajo">Cómo trabajo</a><a href="index.html">Laboratorio</a><a href="../ideas/index.html">Ideas</a><a href="../index.html#sobre-mi">Sobre mí</a><a class="nav-cta" href="../index.html#conversacion">Conversación</a>
+    </nav>
+  </header>
+  <main>
+    <section class="lab-hero shell">
+      <div>
+        <a class="back-link" href="index.html">← Volver al Laboratorio</a>
+        <p class="eyebrow">Video educativo · CSTM</p>
+        <h1>La historia de la psiquiatría</h1>
+        <p class="lab-intro">Un recorrido para comprender que las formas de definir, clasificar y diagnosticar la salud mental también tienen una historia.</p>
+        <div class="lab-meta"><div><strong>Proyecto</strong><span>Clasificación de Síndromes y Trastornos Mentales</span></div><div><strong>Formato</strong><span>Video educativo</span></div><div><strong>Enfoque</strong><span>Histórico y crítico</span></div></div>
+      </div>
+      <figure class="hero-image"><img src="../assets/images/laboratorio/historia-psiquiatria.webp" alt="Video educativo La historia de la psiquiatría" loading="lazy"></figure>
+    </section>
+    <section class="section shell">
+      <div class="two-column">
+        <div class="reveal"><p class="eyebrow">El problema de aprendizaje</p><h2>Las categorías diagnósticas podían parecer universales e inmutables.</h2></div>
+        <div class="copy reveal">
+          <p>Al estudiar sistemas de clasificación, existe el riesgo de asumir que las categorías diagnósticas siempre han existido de la misma manera y que representan una descripción neutral de la realidad.</p>
+          <p>El video se diseñó para mostrar que las formas de comprender el sufrimiento mental han cambiado a lo largo del tiempo y que cada periodo histórico ha construido explicaciones, tratamientos y criterios distintos.</p>
+          <div class="note"><strong>Propósito del recurso:</strong><br>Explorar la historia de la psiquiatría desde la Antigüedad hasta el DSM-5, analizando cómo han cambiado las formas de entender, clasificar y diagnosticar el sufrimiento mental.</div>
+        </div>
+      </div>
+    </section>
+    <section class="video-section section">
+      <div class="shell">
+        <div class="video-heading reveal"><p class="eyebrow">Explora el recurso</p><h2>¿Quién define la salud mental?</h2><p>Reproduce el video dentro del sitio o ábrelo directamente en YouTube.</p></div>
+        <div class="video-shell reveal">
+          <div class="video-toolbar"><strong>La historia de la psiquiatría</strong><a href="https://youtu.be/BNNDrXYpYpM" target="_blank" rel="noopener">Abrir en YouTube →</a></div>
+          <div class="video-frame"><iframe src="https://www.youtube.com/embed/BNNDrXYpYpM" title="La historia de la psiquiatría" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        </div>
+      </div>
+    </section>
+    <section class="section shell">
+      <div class="decisions-heading reveal"><p class="eyebrow">Decisiones de diseño</p><h2>El recorrido histórico debía servir para pensar, no solo para recordar fechas.</h2><p>La narrativa se construyó para mostrar transformaciones, tensiones y cambios de perspectiva a lo largo del tiempo.</p></div>
+      <div class="decision-grid">
+        <article class="decision-card reveal"><span class="decision-dot"></span><h3>Organizar como relato</h3><p>La historia se presenta como una secuencia de cambios de perspectiva, no como una lista aislada de acontecimientos.</p></article>
+        <article class="decision-card reveal"><span class="decision-dot"></span><h3>Relacionar ideas y contexto</h3><p>Cada forma de explicar la salud mental se vincula con las creencias, conocimientos e instituciones de su época.</p></article>
+        <article class="decision-card reveal"><span class="decision-dot"></span><h3>Mostrar continuidades y rupturas</h3><p>El recurso permite observar qué ideas desaparecen, cuáles se transforman y cuáles continúan presentes de otras maneras.</p></article>
+        <article class="decision-card reveal"><span class="decision-dot"></span><h3>Cerrar con una pregunta crítica</h3><p>El recorrido termina invitando a pensar quién participa hoy en la definición de lo normal y lo patológico.</p></article>
+      </div>
+    </section>
+    <section class="questions-section section">
+      <div class="questions-grid shell">
+        <div class="reveal"><p class="eyebrow">Preguntas que buscaba provocar</p><h2>La historia como herramienta de pensamiento crítico.</h2></div>
+        <div class="questions-copy reveal">
+          <p>El recurso no se diseñó únicamente para ofrecer información, sino para abrir preguntas que acompañaran el resto del curso.</p>
+          <div class="question-list">
+            <div class="question-card">¿Quién decide qué comportamiento se considera normal?</div>
+            <div class="question-card">¿Cómo influyen la cultura y la época en un diagnóstico?</div>
+            <div class="question-card">¿Qué consecuencias tienen las categorías sobre las personas?</div>
+            <div class="question-card">¿Cómo utilizar un sistema diagnóstico sin olvidar sus límites?</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section shell">
+      <div class="reflection">
+        <div class="reveal"><p class="eyebrow">Lo que aprendí diseñando este recurso</p><h2>Comprender la historia transforma la forma de utilizar una clasificación.</h2></div>
+        <div class="reflection-copy reveal">Diseñar este video confirmó que una perspectiva histórica ayuda a cuestionar aquello que suele presentarse como definitivo. Cuando el estudiante comprende que las categorías diagnósticas han cambiado, puede utilizar los sistemas actuales con mayor conciencia, reconociendo tanto su utilidad como sus límites.
+          <div class="design-notebook"><strong>Cuaderno de diseño</strong><p>Enseñar la historia de una herramienta también es enseñar a no utilizarla como si fuera neutral, eterna o incuestionable.</p></div>
+        </div>
+      </div>
+    </section>
+    <nav class="next-resource shell">
+      <a href="dsm5-desde-cero.html"><small>Recurso anterior</small><strong>← DSM-5 desde cero</strong></a>
+      <a href="test-historia-psiquiatria.html" style="text-align:right"><small>Siguiente recurso</small><strong>Test sobre la historia de la psiquiatría →</strong></a>
+    </nav>
+  </main>
+  <footer class="site-footer shell"><div><strong>Anahí Del Toro</strong><br>Pedagogía · Diseño · Tecnología</div><p>© 2026 Anahí Del Toro</p></footer>
+  <script>
+    const menuButton=document.querySelector(".menu-button"),mainNav=document.querySelector(".main-nav");
+    if(menuButton&&mainNav){menuButton.addEventListener("click",()=>{const open=mainNav.classList.toggle("is-open");menuButton.setAttribute("aria-expanded",String(open))});mainNav.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{mainNav.classList.remove("is-open");menuButton.setAttribute("aria-expanded","false")}))}
+    const revealElements=document.querySelectorAll(".reveal");
+    if("IntersectionObserver" in window){const observer=new IntersectionObserver((entries,currentObserver)=>{entries.forEach(entry=>{if(!entry.isIntersecting)return;entry.target.classList.add("is-visible");currentObserver.unobserve(entry.target)})},{threshold:.12,rootMargin:"0px 0px -40px 0px"});revealElements.forEach(element=>observer.observe(element))}else{revealElements.forEach(element=>element.classList.add("is-visible"))}
+  </script>
+</body>
+</html>

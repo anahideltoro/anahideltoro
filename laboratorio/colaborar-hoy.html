@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Presentación interactiva sobre los retos contemporáneos de la colaboración en el aula.">
+  <title>¿Qué significa colaborar hoy? | Laboratorio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ivory:#fbfaf7;
+      --white:#ffffff;
+      --graphite:#242628;
+      --muted:#6f6c68;
+      --teal:#0d5656;
+      --burgundy:#9c1625;
+      --paper:#f3eee8;
+      --line:#ded9d2;
+      --shadow:0 18px 50px rgba(37,35,31,.09);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--ivory);
+      color:var(--graphite);
+      font-family:"DM Sans",system-ui,sans-serif;
+      line-height:1.65;
+    }
+    img{display:block;width:100%}
+    a{color:inherit;text-decoration:none}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,h3{font-family:"Playfair Display",Georgia,serif;letter-spacing:-.035em}
+    .shell{width:min(1320px,calc(100% - 64px));margin-inline:auto}
+    .section{padding:100px 0}
+    .eyebrow{
+      margin:0 0 16px;
+      color:var(--teal);
+      font-size:.76rem;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+
+    .site-header{
+      position:sticky;top:16px;z-index:60;
+      width:min(1440px,calc(100% - 32px));
+      min-height:96px;margin:16px auto 0;
+      padding:16px 20px 16px 28px;
+      display:flex;align-items:center;justify-content:space-between;gap:24px;
+      background:rgba(251,250,247,.94);
+      border:1px solid var(--line);
+      border-radius:30px;
+      backdrop-filter:blur(14px);
+    }
+    .brand{width:150px}
+    .brand img{height:56px;object-fit:contain;object-position:left center}
+    .main-nav{display:flex;align-items:center;gap:25px;font-weight:700}
+    .main-nav a{font-size:.92rem;white-space:nowrap}
+    .nav-cta{padding:13px 22px;color:#fff;background:var(--burgundy);border-radius:999px}
+    .menu-button{
+      display:none;width:46px;height:46px;padding:0;
+      place-content:center;gap:5px;border:1px solid var(--line);
+      border-radius:50%;background:var(--white)
+    }
+    .menu-button span{width:20px;height:2px;background:var(--graphite)}
+
+    .lab-hero{
+      padding:86px 0 62px;
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:72px;
+      align-items:center;
+    }
+    .back-link{display:inline-block;margin-bottom:46px;color:var(--muted);font-size:.9rem}
+    .lab-hero h1{margin-bottom:24px;font-size:clamp(4.5rem,7vw,7.2rem);line-height:.95}
+    .lab-intro{max-width:660px;color:var(--teal);font-size:1.2rem;font-weight:600}
+    .lab-meta{
+      margin-top:40px;padding-top:28px;
+      display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+      border-top:1px solid var(--line)
+    }
+    .lab-meta strong,.lab-meta span{display:block}
+    .lab-meta strong{color:var(--teal);font-size:.75rem;text-transform:uppercase;letter-spacing:.12em}
+    .lab-meta span{margin-top:6px;color:var(--muted);font-size:.9rem}
+    .hero-image{
+      overflow:hidden;min-height:600px;
+      border-radius:0 0 0 120px;
+      box-shadow:var(--shadow);
+      background:var(--paper);
+    }
+    .hero-image img{height:600px;object-fit:cover}
+
+    .purpose-grid,.use-grid,.reflection{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:70px;
+      align-items:start;
+    }
+    .purpose-grid h2,.use-grid h2,.reflection h2{
+      font-size:clamp(3.2rem,5vw,5rem);
+      line-height:1;
+    }
+    .purpose-copy,.use-copy,.reflection-copy{color:var(--muted);font-size:1.05rem}
+    .purpose-copy p,.use-copy p,.reflection-copy p{margin-bottom:1.4em}
+    .purpose-note{
+      margin-top:28px;padding:24px 26px;
+      background:var(--paper);
+      border-left:4px solid var(--teal);
+      border-radius:0 16px 16px 0;
+      color:var(--graphite);
+    }
+
+    .interactive{background:var(--paper)}
+    .interactive-heading{max-width:900px;margin-bottom:42px}
+    .interactive-heading h2{
+      margin-bottom:18px;
+      font-size:clamp(3.2rem,5vw,5rem);
+      line-height:1.02;
+    }
+    .interactive-heading p{color:var(--muted);font-size:1.04rem}
+    .embed-shell{
+      overflow:hidden;background:var(--white);
+      border:1px solid var(--line);border-radius:22px;
+      box-shadow:var(--shadow)
+    }
+    .embed-toolbar{
+      padding:18px 22px;display:flex;justify-content:space-between;
+      align-items:center;gap:20px;border-bottom:1px solid var(--line)
+    }
+    .embed-toolbar strong{font-family:"Playfair Display",Georgia,serif;font-size:1.35rem}
+    .embed-toolbar a{color:var(--teal);font-size:.86rem;font-weight:700}
+    .embed-frame{position:relative;padding-bottom:56.25%;height:0;background:#111}
+    .embed-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+    .decisions-heading{max-width:860px;margin-bottom:40px}
+    .decisions-heading h2{
+      margin-bottom:16px;
+      font-size:clamp(3.2rem,5vw,5rem);
+      line-height:1;
+    }
+    .decisions-heading p{color:var(--muted)}
+    .decision-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .decision-card{
+      min-height:250px;padding:28px 26px;display:flex;flex-direction:column;
+      background:var(--white);border:1px solid var(--line);border-radius:18px;
+      transition:transform .25s ease,box-shadow .25s ease
+    }
+    .decision-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .decision-dot{
+      width:46px;height:46px;margin-bottom:28px;display:block;
+      background:#e3efee;border-radius:50%
+    }
+    .decision-card:nth-child(2) .decision-dot{background:#e5eef2}
+    .decision-card:nth-child(3) .decision-dot{background:#f2ebd7}
+    .decision-card:nth-child(4) .decision-dot{background:#f1e5eb}
+    .decision-card h3{margin-bottom:14px;font-size:1.48rem;line-height:1.14}
+    .decision-card p{margin:0;color:var(--muted);font-size:.92rem;line-height:1.6}
+
+    .use-section{background:#f6f7f6}
+    .use-steps{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .use-step{
+      padding:22px;background:var(--white);
+      border:1px solid var(--line);border-radius:16px
+    }
+    .use-step strong{
+      display:block;margin-bottom:8px;color:var(--teal);
+      font-family:"Playfair Display",Georgia,serif;font-size:1.3rem
+    }
+    .use-step p{margin:0;color:var(--muted);font-size:.9rem}
+
+    .conversation{
+      color:#fff;background:linear-gradient(135deg,#071b3a,#17457a)
+    }
+    .conversation-grid{
+      display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:start
+    }
+    .conversation .eyebrow{color:#c5e7e4}
+    .conversation h2{font-size:clamp(3.2rem,5vw,5rem);line-height:1}
+    .conversation-copy{color:#dbeafe;font-size:1.04rem}
+    .conversation-copy ul{margin:24px 0 0;padding-left:20px}
+
+    .next-resource{
+      margin-bottom:80px;padding:48px 0;
+      display:flex;justify-content:space-between;align-items:center;gap:30px;
+      border-top:1px solid var(--line);border-bottom:1px solid var(--line)
+    }
+    .next-resource small{display:block;margin-bottom:8px;color:var(--muted)}
+    .next-resource strong{font-family:"Playfair Display",Georgia,serif;font-size:1.5rem}
+    .site-footer{padding:0 0 48px;display:flex;justify-content:space-between;color:var(--muted)}
+
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.is-visible{opacity:1;transform:none}
+
+    @media(max-width:1050px){
+      .main-nav{gap:14px}
+      .main-nav a{font-size:.85rem}
+      .lab-hero{grid-template-columns:1fr}
+      .hero-image,.hero-image img{height:520px;min-height:520px}
+      .decision-grid{grid-template-columns:repeat(2,1fr)}
+      .use-steps{grid-template-columns:1fr}
+    }
+
+    @media(max-width:860px){
+      .menu-button{display:grid}
+      .main-nav{
+        display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;
+        padding:22px;flex-direction:column;align-items:stretch;
+        background:var(--ivory);border:1px solid var(--line);
+        border-radius:22px;box-shadow:var(--shadow)
+      }
+      .main-nav.is-open{display:flex}
+      .nav-cta{text-align:center}
+      .purpose-grid,.use-grid,.reflection,.conversation-grid{grid-template-columns:1fr;gap:42px}
+    }
+
+    @media(max-width:640px){
+      .shell{width:min(100% - 24px,1320px)}
+      .section{padding:76px 0}
+      .site-header{
+        width:calc(100% - 16px);top:8px;margin-top:8px;
+        min-height:auto;padding:12px 14px
+      }
+      .brand{width:124px}
+      .brand img{height:46px}
+      .lab-hero{padding-top:58px;gap:36px}
+      .lab-hero h1{font-size:3.8rem}
+      .hero-image,.hero-image img{height:420px;min-height:420px}
+      .lab-meta,.decision-grid{grid-template-columns:1fr}
+      .next-resource,.site-footer{align-items:flex-start;flex-direction:column}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}
+      .reveal{opacity:1;transform:none}
+    }
+  
+/* Accesibilidad de teclado */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--burgundy);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+/* Menú móvil accesible en pantallas bajas */
+@media(max-width:860px){
+  .main-nav.is-open{
+    max-height:calc(100vh - 120px);
+    overflow-y:auto;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Volver al inicio">
+      <img src="../assets/logo-anahi-del-toro.png" alt="Anahí Del Toro">
+    </a>
+
+    <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="../index.html">Inicio</a>
+      <a href="../index.html#en-que-creo">En qué creo</a>
+      <a href="../casos/index.html">Casos</a>
+      <a href="../index.html#como-trabajo">Cómo trabajo</a>
+      <a href="index.html">Laboratorio</a>
+      <a href="../ideas/index.html">Ideas</a>
+      <a href="../index.html#sobre-mi">Sobre mí</a>
+      <a class="nav-cta" href="../index.html#conversacion">Conversación</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="lab-hero shell">
+      <div>
+        <a class="back-link" href="index.html">← Volver al Laboratorio</a>
+        <p class="eyebrow">Presentación interactiva · Colaboración</p>
+        <h1>¿Qué significa colaborar hoy?</h1>
+        <p class="lab-intro">
+          Una presentación para problematizar el trabajo en equipo y reconocer
+          por qué colaborar exige mucho más que repartir tareas.
+        </p>
+
+        <div class="lab-meta">
+          <div><strong>Proyecto</strong><span>Habilidades del Siglo XXI</span></div>
+          <div><strong>Formato</strong><span>Genially interactivo</span></div>
+          <div><strong>Uso</strong><span>Reflexión posterior al Tangram</span></div>
+        </div>
+      </div>
+
+      <figure class="hero-image">
+        <img
+          src="../assets/images/laboratorio/colaborar-hoy.webp"
+          alt="Presentación interactiva Qué significa colaborar hoy"
+         loading="lazy">
+      </figure>
+    </section>
+
+    <section class="section shell">
+      <div class="purpose-grid">
+        <div class="reveal">
+          <p class="eyebrow">Por qué lo diseñé</p>
+          <h2>Pasar de “trabajar juntos” a construir algo en común.</h2>
+        </div>
+
+        <div class="purpose-copy reveal">
+          <p>
+            En el aula, muchas actividades se nombran colaborativas aunque en la práctica
+            consistan únicamente en dividir tareas y reunirlas al final. La presentación
+            se diseñó para cuestionar esa idea y abrir una conversación más profunda.
+          </p>
+
+          <p>
+            El recurso recupera las tensiones vividas durante el Tangram colaborativo:
+            información desigual, necesidad de acuerdos, interpretación, escucha y ajuste.
+            Desde ahí, ayuda a construir una definición más exigente de colaboración.
+          </p>
+
+          <div class="purpose-note">
+            <strong>Propósito del recurso:</strong><br>
+            Contextualizar los retos que enfrentan los docentes de Educación Media Superior
+            al diseñar actividades en equipo y reconocer las condiciones necesarias
+            para que exista una colaboración auténtica.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="interactive section">
+      <div class="shell">
+        <div class="interactive-heading reveal">
+          <p class="eyebrow">Explora el recurso</p>
+          <h2>Una conversación interactiva sobre colaboración.</h2>
+          <p>
+            Recorre la presentación dentro del sitio o ábrela en otra pestaña
+            para utilizarla a pantalla completa.
+          </p>
+        </div>
+
+        <div class="embed-shell reveal">
+          <div class="embed-toolbar">
+            <strong>¿Qué significa colaborar hoy?</strong>
+            <a
+              href="https://view.genially.com/6a2f1eb2d238dc00e42c6823"
+              target="_blank"
+              rel="noopener"
+            >
+              Abrir en otra pestaña →
+            </a>
+          </div>
+
+          <div class="embed-frame">
+            <iframe
+              title="¿Qué significa colaborar hoy?"
+              src="https://view.genially.com/6a2f1eb2d238dc00e42c6823"
+              allowfullscreen
+              scrolling="yes"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell">
+      <div class="decisions-heading reveal">
+        <p class="eyebrow">Decisiones de diseño</p>
+        <h2>La teoría debía partir de una experiencia compartida.</h2>
+        <p>
+          La presentación no se planteó como una explicación aislada, sino como
+          una herramienta para interpretar lo que acababa de ocurrir en la dinámica.
+        </p>
+      </div>
+
+      <div class="decision-grid">
+        <article class="decision-card reveal">
+          <span class="decision-dot" aria-hidden="true"></span>
+          <h3>Recuperar la experiencia previa</h3>
+          <p>
+            Los conceptos se conectan con situaciones que los participantes
+            acaban de vivir durante el Tangram.
+          </p>
+        </article>
+
+        <article class="decision-card reveal">
+          <span class="decision-dot" aria-hidden="true"></span>
+          <h3>Distinguir cooperación y colaboración</h3>
+          <p>
+            El recurso ayuda a reconocer cuándo un grupo reparte tareas
+            y cuándo realmente construye decisiones y significados en conjunto.
+          </p>
+        </article>
+
+        <article class="decision-card reveal">
+          <span class="decision-dot" aria-hidden="true"></span>
+          <h3>Visibilizar las condiciones</h3>
+          <p>
+            Escucha, claridad, acuerdos, confianza y ajuste se presentan
+            como condiciones observables, no como valores abstractos.
+          </p>
+        </article>
+
+        <article class="decision-card reveal">
+          <span class="decision-dot" aria-hidden="true"></span>
+          <h3>Conectar con el aula</h3>
+          <p>
+            La reflexión termina preguntando qué debe cambiar al diseñar
+            experiencias colaborativas para estudiantes.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="use-section section">
+      <div class="use-grid shell">
+        <div class="reveal">
+          <p class="eyebrow">Cómo se utilizó</p>
+          <h2>Del desconcierto a la conceptualización.</h2>
+        </div>
+
+        <div class="use-copy reveal">
+          <p>
+            La presentación se utilizó inmediatamente después del Tangram.
+            Su función fue recuperar las dificultades, acuerdos y estrategias
+            observadas para convertirlas en categorías de análisis.
+          </p>
+
+          <div class="use-steps">
+            <div class="use-step">
+              <strong>Recuperar</strong>
+              <p>Nombrar lo que ocurrió durante la dinámica y comparar experiencias entre equipos.</p>
+            </div>
+
+            <div class="use-step">
+              <strong>Conceptualizar</strong>
+              <p>Relacionar lo vivido con comunicación, interdependencia, acuerdos y responsabilidad compartida.</p>
+            </div>
+
+            <div class="use-step">
+              <strong>Transferir</strong>
+              <p>Revisar cómo se diseñan las actividades en equipo dentro de la propia práctica docente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="conversation section">
+      <div class="conversation-grid shell">
+        <div class="reveal">
+          <p class="eyebrow">La conversación que buscaba provocar</p>
+          <h2>¿Qué hacemos cuando un grupo no sabe colaborar?</h2>
+        </div>
+
+        <div class="conversation-copy reveal">
+          <p>
+            El recurso propone dejar de asumir que el estudiante ya sabe trabajar
+            con otros y comenzar a reconocer que la colaboración también debe enseñarse,
+            acompañarse y evaluarse.
+          </p>
+
+          <ul>
+            <li>¿Las tareas exigen interdependencia real?</li>
+            <li>¿Existen acuerdos y responsabilidades compartidas?</li>
+            <li>¿Se enseña a escuchar, argumentar y ajustar decisiones?</li>
+            <li>¿La evaluación reconoce tanto el proceso como el producto?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell">
+      <div class="reflection">
+        <div class="reveal">
+          <p class="eyebrow">Lo que aprendí diseñando este recurso</p>
+          <h2>La colaboración no aparece por reunir personas.</h2>
+        </div>
+
+        <div class="reflection-copy reveal">
+          <p>
+            Diseñar esta presentación confirmó que el trabajo colaborativo requiere
+            una arquitectura pedagógica. No basta con formar equipos: es necesario
+            crear una meta compartida, distribuir información y responsabilidades,
+            hacer visibles los acuerdos y ofrecer momentos para revisar cómo se está trabajando.
+          </p>
+
+          <p>
+            Cuando esas condiciones se diseñan de manera intencional, la colaboración
+            deja de ser una instrucción general y se convierte en una experiencia
+            que puede observarse, acompañarse y aprenderse.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <nav class="next-resource shell">
+      <a href="tangram.html">
+        <small>Recurso anterior</small>
+        <strong>← Tangram colaborativo</strong>
+      </a>
+
+      <a href="simple-past.html" style="text-align:right">
+        <small>Siguiente recurso</small>
+        <strong>Simple past of regular and irregular verbs →</strong>
+      </a>
+    </nav>
+  </main>
+
+  <footer class="site-footer shell">
+    <div><strong>Anahí Del Toro</strong><br>Pedagogía · Diseño · Tecnología</div>
+    <p>© 2026 Anahí Del Toro</p>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector(".menu-button");
+    const mainNav = document.querySelector(".main-nav");
+
+    if (menuButton && mainNav) {
+      menuButton.addEventListener("click", () => {
+        const open = mainNav.classList.toggle("is-open");
+        menuButton.setAttribute("aria-expanded", String(open));
+      });
+
+      mainNav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mainNav.classList.remove("is-open");
+          menuButton.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries, currentObserver) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            currentObserver.unobserve(entry.target);
+          });
+        },
+        {
+          threshold:.12,
+          rootMargin:"0px 0px -40px 0px"
+        }
+      );
+
+      revealElements.forEach((element) => observer.observe(element));
+    } else {
+      revealElements.forEach((element) => element.classList.add("is-visible"));
+    }
+  </script>
+</body>
+</html>

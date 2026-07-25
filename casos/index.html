@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Casos de diseño instruccional, tecnología educativa y formación docente desarrollados por Anahí Del Toro.">
+  <title>Casos | Anahí Del Toro</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ivory:#fbfaf7;
+      --white:#ffffff;
+      --graphite:#242628;
+      --muted:#6f6c68;
+      --teal:#0d5656;
+      --burgundy:#9c1625;
+      --paper:#f3eee8;
+      --line:#ded9d2;
+      --shadow:0 18px 50px rgba(37,35,31,.09);
+      --radius-xl:30px;
+      --radius-lg:24px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--ivory);
+      color:var(--graphite);
+      font-family:"DM Sans",system-ui,sans-serif;
+      line-height:1.65;
+    }
+    img{display:block;width:100%}
+    a{color:inherit;text-decoration:none}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,h3{font-family:"Playfair Display",Georgia,serif;letter-spacing:-.035em}
+    em{color:var(--burgundy)}
+    .shell{width:min(1320px,calc(100% - 64px));margin-inline:auto}
+    .eyebrow{
+      margin:0 0 16px;
+      color:var(--teal);
+      font-size:.76rem;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+    .text-link{color:var(--teal);font-weight:700}
+
+    /* Header */
+    .site-header{
+      position:sticky;
+      top:16px;
+      z-index:50;
+      width:min(1440px,calc(100% - 32px));
+      min-height:96px;
+      margin:16px auto 0;
+      padding:16px 20px 16px 28px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      background:rgba(251,250,247,.94);
+      border:1px solid var(--line);
+      border-radius:30px;
+      backdrop-filter:blur(14px);
+    }
+    .brand{width:150px}
+    .brand img{height:56px;object-fit:contain;object-position:left center}
+    .main-nav{display:flex;align-items:center;gap:25px;font-weight:700}
+    .main-nav a{font-size:.92rem;white-space:nowrap}
+    .nav-cta{padding:13px 22px;color:#fff;background:var(--burgundy);border-radius:999px}
+    .menu-button{
+      display:none;
+      width:46px;
+      height:46px;
+      padding:0;
+      place-content:center;
+      gap:5px;
+      border:1px solid var(--line);
+      border-radius:50%;
+      background:var(--white);
+    }
+    .menu-button span{width:20px;height:2px;background:var(--graphite)}
+
+    /* Hero */
+    .cases-hero{
+      padding:110px 0 76px;
+      border-bottom:1px solid var(--line);
+    }
+    .cases-hero h1{
+      max-width:980px;
+      margin-bottom:24px;
+      font-size:clamp(4.6rem,7vw,7.4rem);
+      line-height:.96;
+    }
+    .cases-hero p:last-child{
+      max-width:730px;
+      margin-bottom:0;
+      color:var(--muted);
+      font-size:1.14rem;
+    }
+
+    /* Casos */
+    .cases-list{padding:72px 0 110px}
+    .case-entry{
+      overflow:hidden;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      min-height:520px;
+      margin-bottom:28px;
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:var(--radius-xl);
+      transition:transform .25s ease,box-shadow .25s ease;
+    }
+    .case-entry:hover{
+      transform:translateY(-5px);
+      box-shadow:var(--shadow);
+    }
+    .case-entry:nth-child(even) .case-image{order:2}
+    .case-entry:nth-child(even) .case-copy{order:1}
+    .case-image{
+      overflow:hidden;
+      min-height:520px;
+      background:var(--paper);
+    }
+    .case-image img{
+      height:100%;
+      object-fit:cover;
+      transition:transform .5s ease;
+    }
+    .case-entry:hover .case-image img{transform:scale(1.025)}
+    .case-copy{
+      padding:58px 58px 52px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .case-copy h2{
+      margin-bottom:18px;
+      font-size:clamp(2.8rem,4.3vw,4.7rem);
+      line-height:1.02;
+    }
+    .case-copy > p:not(.eyebrow){
+      max-width:590px;
+      margin-bottom:24px;
+      color:var(--muted);
+      font-size:1.02rem;
+    }
+    .case-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:4px 0 28px;
+    }
+    .case-tags span{
+      padding:8px 12px;
+      color:var(--muted);
+      background:var(--paper);
+      border-radius:999px;
+      font-size:.76rem;
+    }
+    .case-link{
+      width:max-content;
+      margin-top:auto;
+      padding-top:24px;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      color:var(--teal);
+      border-top:1px solid var(--line);
+      font-weight:700;
+    }
+    .case-link span{transition:transform .2s ease}
+    .case-entry:hover .case-link span{transform:translateX(4px)}
+
+    /* Cierre */
+    .cases-closing{
+      margin-bottom:84px;
+      padding:58px 0;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:40px;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    .cases-closing h2{
+      max-width:800px;
+      margin:0;
+      font-size:clamp(2.8rem,4.4vw,4.6rem);
+      line-height:1.02;
+    }
+    .button{
+      min-height:52px;
+      padding:0 26px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      background:var(--teal);
+      border-radius:999px;
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+    .site-footer{
+      padding:0 0 48px;
+      display:flex;
+      justify-content:space-between;
+      color:var(--muted);
+    }
+
+    /* Animaciones */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.is-visible{opacity:1;transform:none}
+
+    @media(max-width:980px){
+      .case-entry{grid-template-columns:1fr}
+      .case-entry:nth-child(even) .case-image,
+      .case-entry:nth-child(even) .case-copy{order:initial}
+      .case-image{min-height:420px}
+      .cases-closing{align-items:flex-start;flex-direction:column}
+    }
+
+    @media(max-width:860px){
+      .menu-button{display:grid}
+      .main-nav{
+        display:none;
+        position:absolute;
+        top:calc(100% + 8px);
+        left:0;
+        right:0;
+        padding:22px;
+        flex-direction:column;
+        align-items:stretch;
+        background:var(--ivory);
+        border:1px solid var(--line);
+        border-radius:22px;
+        box-shadow:var(--shadow);
+      }
+      .main-nav.is-open{display:flex}
+      .nav-cta{text-align:center}
+    }
+
+    @media(max-width:640px){
+      .shell{width:min(100% - 24px,1320px)}
+      .site-header{
+        width:calc(100% - 16px);
+        top:8px;
+        margin-top:8px;
+        min-height:auto;
+        padding:12px 14px;
+      }
+      .brand{width:124px}
+      .brand img{height:46px}
+      .cases-hero{padding-top:76px}
+      .cases-hero h1{font-size:4rem}
+      .case-image{min-height:320px}
+      .case-copy{padding:34px 26px 30px}
+      .case-copy h2{font-size:2.7rem}
+      .site-footer{align-items:flex-start;flex-direction:column}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}
+      .reveal{opacity:1;transform:none}
+    }
+  
+/* Accesibilidad de teclado */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--burgundy);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+/* Menú móvil accesible en pantallas bajas */
+@media(max-width:860px){
+  .main-nav.is-open{
+    max-height:calc(100vh - 120px);
+    overflow-y:auto;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Volver al inicio">
+      <img src="../assets/logo-anahi-del-toro.png" alt="Anahí Del Toro">
+    </a>
+
+    <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="../index.html">Inicio</a>
+      <a href="../index.html#en-que-creo">En qué creo</a>
+      <a href="index.html">Casos</a>
+      <a href="../index.html#como-trabajo">Cómo trabajo</a>
+      <a href="../laboratorio/index.html">Laboratorio</a>
+      <a href="../ideas/index.html">Ideas</a>
+      <a href="../index.html#sobre-mi">Sobre mí</a>
+      <a class="nav-cta" href="../index.html#conversacion">Conversación</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="cases-hero shell">
+      <p class="eyebrow">Casos</p>
+      <h1>Cuando las ideas se convierten en <em>experiencias.</em></h1>
+      <p>
+        Una selección de proyectos de formación docente, diseño instruccional
+        y tecnología educativa documentados desde el problema, las decisiones
+        de diseño y los aprendizajes obtenidos.
+      </p>
+    </section>
+
+    <section class="cases-list shell">
+      <article class="case-entry reveal">
+        <a class="case-image" href="habilidades-siglo-xxi/habilidades-siglo-xxi.html">
+          <img
+            src="../assets/images/caso-01-habilidades-siglo-xxi/hero-caso-01.webp"
+            alt="Taller Habilidades del Siglo XXI"
+          >
+        </a>
+
+        <div class="case-copy">
+          <p class="eyebrow">Caso 01 · Formación docente</p>
+          <h2>Habilidades del Siglo XXI</h2>
+          <p>
+            Diseño y facilitación de una experiencia para comprender la realidad
+            adolescente e integrar comunicación, colaboración, pensamiento crítico
+            y creatividad en Educación Media Superior.
+          </p>
+
+          <div class="case-tags">
+            <span>Formación docente</span>
+            <span>Diseño instruccional</span>
+            <span>Moodle</span>
+            <span>4C</span>
+          </div>
+
+          <a class="case-link" href="habilidades-siglo-xxi/habilidades-siglo-xxi.html">
+            Ver caso <span>→</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="case-entry reveal">
+        <a class="case-image" href="lengua-extranjera/lengua-extranjera.html">
+          <img
+            src="../assets/images/caso-02-lengua-extranjera/hero-caso-02.webp"
+            alt="Curso de Lengua Extranjera para Bachillerato"
+          >
+        </a>
+
+        <div class="case-copy">
+          <p class="eyebrow">Caso 02 · Lengua Extranjera</p>
+          <h2>Inglés para Bachillerato</h2>
+          <p>
+            Diseño de experiencias activas y recursos digitales para favorecer
+            un uso más significativo del idioma dentro y fuera del aula.
+          </p>
+
+          <div class="case-tags">
+            <span>Gamificación</span>
+            <span>Aula invertida</span>
+            <span>Video educativo</span>
+            <span>Inglés</span>
+          </div>
+
+          <a class="case-link" href="lengua-extranjera/lengua-extranjera.html">
+            Ver caso <span>→</span>
+          </a>
+        </div>
+      </article>
+
+      <article class="case-entry reveal">
+        <a class="case-image" href="clasificacion-trastornos/clasificacion-trastornos.html">
+          <img
+            src="../assets/images/caso-03-clasificacion-trastornos/hero-caso-03.webp"
+            alt="Curso Clasificación de Síndromes y Trastornos Mentales"
+          >
+        </a>
+
+        <div class="case-copy">
+          <p class="eyebrow">Caso 03 · Ambientes virtuales</p>
+          <h2>Clasificación de Síndromes y Trastornos Mentales</h2>
+          <p>
+            Diseño de un curso mixto para comprender los sistemas diagnósticos
+            desde una perspectiva crítica, ética y contextual, mediante toma de
+            decisiones y análisis de casos.
+          </p>
+
+          <div class="case-tags">
+            <span>Moodle</span>
+            <span>Psicología</span>
+            <span>Casos clínicos</span>
+            <span>Aprendizaje activo</span>
+          </div>
+
+          <a class="case-link" href="clasificacion-trastornos/clasificacion-trastornos.html">
+            Ver caso <span>→</span>
+          </a>
+        </div>
+      </article>
+    </section>
+
+    <section class="cases-closing shell reveal">
+      <h2>Cada proyecto comienza con una pregunta sobre cómo mejorar el aprendizaje.</h2>
+      <a class="button" href="../index.html#conversacion">Iniciar una conversación →</a>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <div><strong>Anahí Del Toro</strong><br>Pedagogía · Diseño · Tecnología</div>
+    <p>© 2026 Anahí Del Toro</p>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector(".menu-button");
+    const mainNav = document.querySelector(".main-nav");
+
+    if (menuButton && mainNav) {
+      menuButton.addEventListener("click", () => {
+        const open = mainNav.classList.toggle("is-open");
+        menuButton.setAttribute("aria-expanded", String(open));
+      });
+
+      mainNav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mainNav.classList.remove("is-open");
+          menuButton.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries, currentObserver) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            currentObserver.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -40px 0px"
+        }
+      );
+
+      revealElements.forEach((element) => observer.observe(element));
+    } else {
+      revealElements.forEach((element) => element.classList.add("is-visible"));
+    }
+  </script>
+</body>
+</html>

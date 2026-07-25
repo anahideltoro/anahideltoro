@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Anahí Del Toro diseña experiencias de aprendizaje con fundamento pedagógico y tecnología educativa.">
+  <title>Anahí Del Toro | Diseño del aprendizaje</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ivory:#fbfaf7;
+      --white:#fff;
+      --graphite:#242628;
+      --muted:#6f6c68;
+      --teal:#0d5656;
+      --teal-soft:#d8ecea;
+      --burgundy:#9c1625;
+      --paper:#f3eee8;
+      --line:#ded9d2;
+      --shadow:0 18px 50px rgba(37,35,31,.09);
+      --radius-xl:30px;
+      --radius-lg:24px;
+      --radius-md:18px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--ivory);
+      color:var(--graphite);
+      font-family:"DM Sans",system-ui,sans-serif;
+      line-height:1.6;
+    }
+    img{display:block;width:100%}
+    a{color:inherit;text-decoration:none}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,.serif{font-family:"Playfair Display",Georgia,serif;letter-spacing:-.04em}
+    em{color:var(--burgundy);font-weight:inherit}
+    .shell{width:min(1360px,calc(100% - 64px));margin-inline:auto}
+    .section{padding:108px 0}
+    .eyebrow{
+      margin:0 0 18px;
+      color:var(--teal);
+      text-transform:uppercase;
+      letter-spacing:.19em;
+      font-size:.76rem;
+      font-weight:700;
+    }
+
+    .section-heading{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:32px;
+      margin-bottom:44px;
+    }
+
+    .section-heading h2{
+      max-width:980px;
+      margin:0;
+      font-size:clamp(3.3rem,5.2vw,5.3rem);
+      line-height:1.02;
+    }
+
+    /* Header */
+    .site-header{
+      position:sticky;
+      top:16px;
+      z-index:100;
+      width:min(1440px,calc(100% - 32px));
+      margin:16px auto 0;
+      min-height:100px;
+      padding:18px 20px 18px 28px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:28px;
+      background:rgba(251,250,247,.94);
+      border:1px solid var(--line);
+      border-radius:30px;
+      backdrop-filter:blur(14px);
+    }
+    .brand{width:150px;flex:0 0 150px}
+    .brand img{height:58px;object-fit:contain;object-position:left center}
+    .main-nav{display:flex;align-items:center;gap:28px;font-weight:700}
+    .main-nav a{font-size:.95rem;white-space:nowrap}
+    .nav-cta{padding:14px 24px;color:white;background:var(--burgundy);border-radius:999px}
+    .menu-button{
+      display:none;width:46px;height:46px;padding:0;place-content:center;gap:5px;
+      border:1px solid var(--line);border-radius:50%;background:var(--white)
+    }
+    .menu-button span{width:20px;height:2px;background:var(--graphite)}
+
+    /* Hero */
+    .hero{
+      min-height:calc(100vh - 120px);
+      padding:76px 0 66px;
+      display:grid;
+      grid-template-columns:1.03fr .97fr;
+      align-items:center;
+      gap:74px;
+    }
+    .hero-copy{position:relative;padding-left:38px}
+    .hero-copy::before{
+      content:"";position:absolute;left:0;top:82px;width:3px;height:258px;background:var(--burgundy)
+    }
+    .hero h1{
+      max-width:690px;
+      margin-bottom:24px;
+      font-size:clamp(4.7rem,7.2vw,7.7rem);
+      line-height:.94;
+    }
+    .hero-description{
+      max-width:640px;margin-bottom:34px;color:var(--muted);font-size:1.16rem
+    }
+    .hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+    .button{
+      min-height:52px;padding:0 26px;display:inline-flex;align-items:center;justify-content:center;
+      gap:12px;border:1px solid transparent;border-radius:999px;font-weight:700
+    }
+    .button-primary{background:var(--teal);color:#fff;box-shadow:0 12px 26px rgba(13,86,86,.17)}
+    .button-secondary{border-color:#c8c2bb;background:transparent}
+    .hero-photo{
+      overflow:hidden;
+      min-height:650px;
+      border-radius:0 0 0 145px;
+      box-shadow:var(--shadow)
+    }
+    .hero-photo img{height:650px;object-fit:cover}
+
+    /* Manifesto */
+  /* En qué creo */
+
+.beliefs {
+  border-top: 1px solid var(--line);
+}
+
+.beliefs-heading {
+  position: relative;
+  max-width: 920px;
+  margin-bottom: 54px;
+  padding-left: 32px;
+}
+
+.beliefs-heading::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 0;
+  width: 3px;
+  background: var(--burgundy);
+}
+
+.beliefs-heading h2 {
+  margin: 0;
+  font-size: clamp(3.3rem, 5.2vw, 5.3rem);
+  line-height: 1.02;
+}
+
+.beliefs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.belief-item {
+    position: relative;
+    min-height: 320px;
+    padding: 42px 30px 40px;
+}
+
+.belief-item + .belief-item {
+  border-left: 1px solid var(--line);
+}
+
+
+.belief-item h3 {
+  margin-bottom: 18px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.45rem, 2vw, 1.85rem);
+  line-height: 1.22;
+}
+
+.belief-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+.belief-accent {
+  position: absolute;
+  bottom: 22px;
+  left: 30px;
+  width: 44px;
+  height: 2px;
+  background: var(--burgundy);
+}
+
+.beliefs-closing {
+  max-width: 920px;
+  margin: 34px auto 0;
+  text-align: center;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  font-style: italic;
+  font-weight: 600;
+}
+
+    /* Casos */
+.cases-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.case-card{
+  overflow:hidden;
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  transition:.25s ease;
+
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+
+.case-card:hover{
+  transform:translateY(-5px);
+  box-shadow:var(--shadow);
+}
+
+.case-visual{
+  position:relative;
+  aspect-ratio:4 / 3;
+  overflow:hidden;
+  background:linear-gradient(140deg,#ddd2c2,#b9c7bd);
+}
+
+.case-visual img{
+  height:100%;
+  object-fit:cover;
+}
+
+.case-icon{
+  position:absolute;
+  left:18px;
+  bottom:18px;
+  width:52px;
+  height:52px;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  background:var(--teal);
+  border-radius:50%;
+  font-weight:700;
+}
+
+.case-content{
+  padding:24px 26px 26px;
+
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+.case-content .eyebrow{
+  color:var(--muted);
+  margin-bottom:12px;
+}
+
+.case-content h3{
+  margin-bottom:12px;
+  font-family:"Playfair Display",serif;
+  font-size:1.6rem;
+  line-height:1.14;
+}
+
+.case-content p{
+  color:var(--muted);
+  min-height:0;
+  margin-bottom:16px;
+  font-size:.96rem;
+  line-height:1.6;
+}
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:18px 0;
+}
+
+.tags span{
+  padding:7px 11px;
+  background:var(--paper);
+  border-radius:999px;
+  color:var(--muted);
+  font-size:.74rem;
+}
+
+.text-link{
+  color:var(--teal);
+  font-weight:700;
+}
+
+.case-content .text-link{
+  margin-top:auto;
+}
+    
+
+    /* Proceso */
+    .process{border-top:1px solid var(--line)}
+    .process-track{
+      position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:20px;margin-top:30px
+    }
+    .process-track::before{
+      content:"";position:absolute;top:39px;left:7%;right:7%;height:1px;background:#b0cfcd
+    }
+    .process-step{text-align:center;position:relative}
+    .process-number{
+      position:relative;z-index:2;width:76px;height:76px;margin:0 auto 20px;
+      display:grid;place-items:center;background:var(--ivory);
+      border:1px solid #9fc8c5;border-radius:50%;color:var(--teal);font-weight:700
+    }
+    .process-step h3{margin-bottom:8px;font-size:1.16rem}
+    .process-step p{margin:0;color:var(--muted);font-size:.9rem}
+
+    /* Laboratorio */
+    .lab-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+    .lab-card{
+      overflow:hidden;background:var(--white);border:1px solid var(--line);
+      border-radius:22px;transition:.25s ease
+    }
+    .lab-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .lab-visual{aspect-ratio:1/1;overflow:hidden;background:var(--paper)}
+    .lab-visual img{height:100%;object-fit:cover}
+    .lab-meta{padding:18px}
+    .lab-meta strong,.lab-meta span{display:block}
+    .lab-meta span{margin-top:3px;color:var(--muted);font-size:.85rem}
+
+    /* Ideas */
+/* ========================================
+   IDEAS EN EL HOME
+======================================== */
+
+.home-ideas {
+  border-top: 1px solid var(--line);
+}
+
+.home-ideas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.home-idea-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.home-idea-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.home-idea-image {
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.home-idea-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.home-idea-card:hover .home-idea-image img {
+  transform: scale(1.035);
+}
+
+.home-idea-content {
+  padding: 24px 26px 26px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.home-idea-content .eyebrow {
+  margin-bottom: 12px;
+  color: var(--muted);
+}
+
+.home-idea-content h3 {
+  margin-bottom: 14px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.7rem;
+  line-height: 1.14;
+}
+
+.home-idea-content p {
+  margin-bottom: 20px;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.65;
+}
+
+.home-idea-content .text-link {
+  margin-top: auto;
+}
+
+    /* About */
+    .about{
+      display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center
+    }
+    .about-image{overflow:hidden;min-height:570px;border-radius:30px 30px 120px 30px}
+    .about-image img{height:570px;object-fit:cover}
+    .about-copy h2{font-size:clamp(3rem,5vw,5rem);line-height:1.02;margin-bottom:22px}
+    .about-copy p{max-width:700px;color:var(--muted);font-size:1.08rem}
+
+    /* Contact */
+    .contact{
+      margin-bottom:70px;padding:78px;background:var(--teal);color:#fff;border-radius:var(--radius-xl)
+    }
+    .contact .eyebrow{color:#c5e7e4}
+    .contact h2{max-width:1000px;font-size:clamp(3rem,5vw,5.1rem);line-height:1.02;margin-bottom:30px}
+    .contact-actions{display:flex;align-items:center;gap:20px}
+    .contact .button-primary{background:#fff;color:var(--teal)}
+    .contact .text-link{color:#fff}
+    .site-footer{padding:0 0 46px;display:flex;justify-content:space-between;color:var(--muted)}
+
+
+    /* Microanimaciones globales */
+    .reveal{
+      opacity:0;
+      transform:translateY(28px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.is-visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .reveal-delay-1{transition-delay:.08s}
+    .reveal-delay-2{transition-delay:.16s}
+    .reveal-delay-3{transition-delay:.24s}
+
+    .button,
+    .nav-cta{
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+
+    .button:hover,
+    .nav-cta:hover{
+      transform:translateY(-2px);
+    }
+
+    .case-visual img,
+    .lab-visual img,
+    .home-idea-image img{
+      transition:transform .5s ease;
+    }
+
+    .case-card:hover .case-visual img,
+    .lab-card:hover .lab-visual img,
+    .home-idea-card:hover .home-idea-image img{
+      transform:scale(1.035);
+    }
+
+    @media(max-width:1100px){
+      .main-nav{gap:16px}
+      .main-nav a{font-size:.88rem}
+
+      .beliefs-grid{grid-template-columns:repeat(2,1fr)}
+      .belief-item:nth-child(3){
+        border-left:0;
+        border-top:1px solid var(--line);
+      }
+      .belief-item:nth-child(4){
+        border-top:1px solid var(--line);
+      }
+
+      .cases-grid{grid-template-columns:1fr}
+      .case-card{
+        display:grid;
+        grid-template-columns:.9fr 1.1fr;
+      }
+      .case-visual{
+        aspect-ratio:auto;
+        min-height:320px;
+      }
+
+      .process-track{
+        grid-template-columns:repeat(3,1fr);
+        row-gap:42px;
+      }
+      .process-track::before{display:none}
+
+      .lab-grid{grid-template-columns:repeat(3,1fr)}
+
+      .home-ideas-grid{grid-template-columns:repeat(2,1fr)}
+      .home-idea-card:first-child{
+        grid-column:1 / -1;
+        display:grid;
+        grid-template-columns:1fr 1fr;
+      }
+      .home-idea-card:first-child .home-idea-image{
+        aspect-ratio:auto;
+        min-height:360px;
+      }
+    }
+
+    @media(max-width:860px){
+      .menu-button{display:grid}
+
+      .main-nav{
+        display:none;
+        position:absolute;
+        top:calc(100% + 8px);
+        left:0;
+        right:0;
+        padding:22px;
+        flex-direction:column;
+        align-items:stretch;
+        background:var(--ivory);
+        border:1px solid var(--line);
+        border-radius:22px;
+        box-shadow:var(--shadow);
+      }
+
+      .main-nav.is-open{display:flex}
+      .nav-cta{text-align:center}
+
+      .hero,
+      .about{grid-template-columns:1fr}
+
+      .hero-copy{padding-left:0}
+      .hero-copy::before{display:none}
+
+      .hero-photo,
+      .hero-photo img{
+        min-height:520px;
+        height:520px;
+      }
+
+      .section-heading{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .lab-grid{grid-template-columns:repeat(2,1fr)}
+    }
+
+    @media(max-width:640px){
+      .shell{width:min(100% - 24px,1360px)}
+      .section{padding:76px 0}
+
+      .site-header{
+        width:calc(100% - 16px);
+        top:8px;
+        margin-top:8px;
+        min-height:auto;
+        padding:12px 14px;
+      }
+
+      .brand{
+        width:124px;
+        flex-basis:124px;
+      }
+
+      .brand img{height:46px}
+
+      .hero{
+        min-height:auto;
+        padding-top:58px;
+        gap:40px;
+      }
+
+      .hero h1{font-size:4rem}
+
+      .hero-photo,
+      .hero-photo img{
+        min-height:430px;
+        height:430px;
+      }
+
+      .beliefs-heading{padding-left:22px}
+      .beliefs-grid{grid-template-columns:1fr}
+
+      .belief-item{
+        min-height:auto;
+        padding:32px 8px 54px;
+      }
+
+      .belief-item + .belief-item,
+      .belief-item:nth-child(3),
+      .belief-item:nth-child(4){
+        border-left:0;
+        border-top:1px solid var(--line);
+      }
+
+      .belief-accent{left:8px}
+
+      .case-card{display:block}
+      .case-visual{
+        min-height:auto;
+        aspect-ratio:1.15 / 1;
+      }
+
+      .process-track{grid-template-columns:1fr}
+
+      .lab-grid,
+      .home-ideas-grid{grid-template-columns:1fr}
+
+      .home-idea-card:first-child{
+        grid-column:auto;
+        display:flex;
+      }
+
+      .home-idea-card:first-child .home-idea-image{
+        aspect-ratio:16 / 10;
+        min-height:0;
+      }
+
+      .contact{padding:44px 26px}
+
+      .contact-actions,
+      .site-footer{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      *,
+      *::before,
+      *::after{
+        scroll-behavior:auto !important;
+        transition-duration:.01ms !important;
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+      }
+
+      .reveal{
+        opacity:1;
+        transform:none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Volver al inicio">
+      <img src="assets/logo-anahi-del-toro.png" alt="Anahí Del Toro">
+    </a>
+
+    <button class="menu-button" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#en-que-creo">En qué creo</a>
+      <a href="#casos">Casos</a>
+      <a href="#como-trabajo">Cómo trabajo</a>
+      <a href="#laboratorio">Laboratorio</a>
+      <a href="ideas/index.html">Ideas</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a class="nav-cta" href="#conversacion">Conversación</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero shell" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow">Pedagogía · Diseño · Tecnología</p>
+        <h1>Aprender cambia cuando el diseño tiene <em>propósito.</em></h1>
+        <p class="hero-description">
+          Diseño experiencias de aprendizaje donde la pedagogía guía cada decisión
+          y la tecnología amplía las posibilidades.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#casos">Ver proyectos <span>→</span></a>
+          <a class="button button-secondary" href="#como-trabajo">Descubrir mi enfoque <span>→</span></a>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <img src="assets/images/home/hero-anahi.webp" alt="Retrato profesional de Anahí Del Toro">
+      </div>
+    </section>
+
+    <section class="beliefs shell section" id="en-que-creo">
+
+  <div class="beliefs-heading">
+
+    <p class="eyebrow">En qué creo</p>
+
+    <h2>
+      Esta es la <em>filosofía</em> que guía
+      cada proyecto que desarrollo.
+    </h2>
+
+  </div>
+
+
+  <div class="beliefs-grid">
+
+    <article class="belief-item">
+
+
+
+      <h3>
+        Aprender nunca ha sido un acto
+        <em>pasivo.</em>
+      </h3>
+
+      <p>
+        Aprender implica observar, cuestionar, decidir,
+        equivocarse, dialogar y volver a intentar.
+      </p>
+
+      <span class="belief-accent"></span>
+
+    </article>
+
+
+    <article class="belief-item">
+
+      
+
+      <h3>
+        Diseño experiencias donde la
+        <em>pedagogía</em> da sentido a cada decisión.
+      </h3>
+
+      <p>
+        La tecnología amplía las posibilidades para aprender
+        cuando responde a una intención pedagógica clara.
+      </p>
+
+      <span class="belief-accent"></span>
+
+    </article>
+
+
+    <article class="belief-item">
+
+      
+
+      <h3>
+        No diseño cursos para
+        <em>transmitir</em> contenidos.
+      </h3>
+
+      <p>
+        Diseño experiencias para desarrollar pensamiento,
+        fortalecer la autonomía y favorecer una participación activa.
+      </p>
+
+      <span class="belief-accent"></span>
+
+    </article>
+
+
+    <article class="belief-item">
+
+      
+
+      <h3>
+        Creo en una educación que
+        <em>transforma.</em>
+      </h3>
+
+      <p>
+        Una educación que invita a comprender, participar
+        y construir conocimiento, no solo a recibirlo.
+      </p>
+
+      <span class="belief-accent"></span>
+
+    </article>
+
+  </div>
+
+
+  <p class="beliefs-closing">
+
+    Si compartimos esta forma de entender el aprendizaje,
+    probablemente disfrutaremos <em>trabajar juntos.</em>
+
+  </p>
+
+</section>
+
+    <section class="shell section" id="casos">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">Casos</p>
+          <h2>Cuando las ideas se convierten en <em>experiencias.</em></h2>
+        </div>
+        <a class="text-link" href="casos/index.html">Ver todos los proyectos →</a>
+      </div>
+
+      <div class="cases-grid">
+        <article class="case-card reveal reveal-delay-1">
+          <a class="case-visual" href="casos/habilidades-siglo-xxi/habilidades-siglo-xxi.html">
+            <img src="assets/images/caso-01-habilidades-siglo-xxi/hero-caso-01.webp" alt="Habilidades del Siglo XXI">
+            <span class="case-icon">◎</span>
+          </a>
+          <div class="case-content">
+            <p class="eyebrow">Formación docente</p>
+            <h3>Habilidades del Siglo XXI</h3>
+            <p>Formación para comprender la realidad adolescente e integrar pensamiento crítico, comunicación, colaboración y creatividad.</p>
+            <div class="tags"><span>Formación</span><span>Diseño instruccional</span><span>4C</span></div>
+            <a class="text-link" href="casos/habilidades-siglo-xxi/habilidades-siglo-xxi.html">
+    Ver caso →
+</a>
+          </div>
+        </article>
+
+        <article class="case-card reveal reveal-delay-2">
+          <a class="case-visual" href="casos/lengua-extranjera/lengua-extranjera.html">
+            <img src="assets/images/caso-02-lengua-extranjera/hero-caso-02.webp" alt="Lengua Extranjera para Bachillerato">
+            <span class="case-icon">□</span>
+          </a>
+          <div class="case-content">
+            <p class="eyebrow">Lengua Extranjera</p>
+            <h3>Inglés para Bachillerato</h3>
+            <p>Experiencias activas apoyadas por recursos digitales para favorecer un uso más significativo del idioma.</p>
+            <div class="tags"><span>Gamificación</span><span>Aula invertida</span><span>Inglés</span></div>
+            <a class="text-link" href="casos/lengua-extranjera/lengua-extranjera.html">Ver caso →</a>
+          </div>
+        </article>
+
+        <article class="case-card reveal reveal-delay-3">
+          <a class="case-visual" href="casos/clasificacion-trastornos/clasificacion-trastornos.html">
+            <img src="assets/images/caso-03-clasificacion-trastornos/hero-caso-03.webp" alt="Clasificación de Síndromes y Trastornos Mentales">
+            <span class="case-icon">&lt;/&gt;</span>
+          </a>
+          <div class="case-content">
+            <p class="eyebrow">Ambientes virtuales</p>
+            <h3>Clasificación de Síndromes y Trastornos Mentales</h3>
+            <p>Diseño de un curso mixto para comprender los sistemas diagnósticos desde una perspectiva crítica, ética y contextual.</p>
+            <div class="tags"><span>Moodle</span><span>Casos clínicos</span><span>Evaluación</span></div>
+            <a class="text-link" href="casos/clasificacion-trastornos/clasificacion-trastornos.html">Ver caso →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="process shell section" id="como-trabajo">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">Cómo trabajo</p>
+          <h2>Un proceso que combina pedagogía, diseño y tecnología.</h2>
+        </div>
+      </div>
+
+      <div class="process-track">
+        <article class="process-step"><div class="process-number">01</div><h3>Investigo</h3><p>Comprendo el contexto, las personas y las necesidades de aprendizaje.</p></article>
+        <article class="process-step"><div class="process-number">02</div><h3>Analizo</h3><p>Identifico oportunidades, retos y objetivos educativos.</p></article>
+        <article class="process-step"><div class="process-number">03</div><h3>Diseño</h3><p>Estructuro experiencias centradas en la participación y el aprendizaje activo.</p></article>
+        <article class="process-step"><div class="process-number">04</div><h3>Desarrollo</h3><p>Creo recursos, actividades y entornos con una intención pedagógica clara.</p></article>
+        <article class="process-step"><div class="process-number">05</div><h3>Evalúo</h3><p>Analizo los resultados y la experiencia de quienes participan.</p></article>
+        <article class="process-step"><div class="process-number">06</div><h3>Mejoro</h3><p>Ajusto cada propuesta a partir de la evidencia y el aprendizaje obtenido.</p></article>
+      </div>
+    </section>
+
+    <section class="shell section" id="laboratorio">
+      <div class="section-heading reveal">
+        <div>
+          <p class="eyebrow">Laboratorio</p>
+          <h2>Un lugar para explorar, experimentar y compartir.</h2>
+        </div>
+        <a class="text-link" href="laboratorio/index.html">Explorar el laboratorio →</a>
+      </div>
+
+      <div class="lab-grid">
+        <a class="lab-card" href="laboratorio/tangram.html">
+          <div class="lab-visual"><img src="assets/images/laboratorio/tangram-colaborativo.webp" alt="Tangram"></div>
+          <div class="lab-meta"><strong>Tangram</strong><span>Comunicación</span></div>
+        </a>
+
+        <a class="lab-card" href="laboratorio/24-horas-adolescente.html">
+          <div class="lab-visual"><img src="assets/images/laboratorio/24-horas-adolescente.webp" alt="24 horas"></div>
+          <div class="lab-meta"><strong>24 horas</strong><span>Contextualización</span></div>
+        </a>
+
+        <a class="lab-card" href="laboratorio/cerebro-adolescente.html">
+          <div class="lab-visual"><img src="assets/images/laboratorio/cerebro-adolescente.webp" alt="El cerebro adolescente"></div>
+          <div class="lab-meta"><strong>El cerebro adolescente</strong><span>Neuroeducación</span></div>
+        </a>
+
+        <a class="lab-card" href="laboratorio/ruleta-diagnostica.html">
+          <div class="lab-visual"><img src="assets/images/laboratorio/ruleta-diagnostica.webp" alt="Ruleta diagnóstica"></div>
+          <div class="lab-meta"><strong>Ruleta diagnóstica</strong><span>Gamificación</span></div>
+        </a>
+
+        <a class="lab-card" href="laboratorio/dsm5-desde-cero.html">
+          <div class="lab-visual"><img src="assets/images/laboratorio/dsm5-desde-cero.webp" alt="DSM-5 desde cero"></div>
+          <div class="lab-meta"><strong>DSM-5 desde cero</strong><span>Video educativo</span></div>
+        </a>
+      </div>
+    </section>
+
+  <section class="home-ideas shell section" id="ideas">
+
+  <div class="section-heading reveal">
+
+    <div>
+
+      <p class="eyebrow">Ideas</p>
+
+      <h2>
+        Un espacio para pensar y conversar
+        sobre educación y diseño.
+      </h2>
+
+    </div>
+
+    <a
+      class="text-link"
+      href="ideas/index.html"
+    >
+      Ver todas las ideas →
+    </a>
+
+  </div>
+
+
+  <div class="home-ideas-grid">
+
+    <!-- IDEA 01 -->
+
+    <article class="home-idea-card reveal reveal-delay-1">
+
+      <a
+        class="home-idea-image"
+        href="ideas/disenar-para-estudiantes-reales.html"
+      >
+        <img
+          src="assets/images/ideas/estudiantes-reales.webp"
+          alt="Diseñar para estudiantes reales, no imaginarios"
+        >
+      </a>
+
+      <div class="home-idea-content">
+
+        <p class="eyebrow">
+          Diseño instruccional
+        </p>
+
+        <h3>
+          Diseñar para estudiantes reales,
+          no imaginarios
+        </h3>
+
+        <p>
+          Diseñar implica comprender el contexto, las necesidades,
+          la forma de aprender y los desafíos de quienes participarán
+          en la experiencia.
+        </p>
+
+        <a
+          class="text-link"
+          href="ideas/disenar-para-estudiantes-reales.html"
+        >
+          Leer idea →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- IDEA 02 -->
+
+    <article class="home-idea-card reveal reveal-delay-2">
+
+      <a
+        class="home-idea-image"
+        href="ideas/tecnologia-no-motiva-por-si-sola.html"
+      >
+        <img
+          src="assets/images/ideas/tecnologia-motivacion.webp"
+          alt="La tecnología no motiva por sí sola"
+        >
+      </a>
+
+      <div class="home-idea-content">
+
+        <p class="eyebrow">
+          Tecnología educativa
+        </p>
+
+        <h3>
+          La tecnología no motiva
+          por sí sola
+        </h3>
+
+        <p>
+          La diferencia no está en incorporar más herramientas,
+          sino en cómo se utilizan para conectar emoción,
+          participación y aprendizaje.
+        </p>
+
+        <a
+          class="text-link"
+          href="ideas/tecnologia-no-motiva-por-si-sola.html"
+        >
+          Leer idea →
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <!-- IDEA 03 -->
+
+    <article class="home-idea-card reveal reveal-delay-3">
+
+      <a
+        class="home-idea-image"
+        href="ideas/formar-a-quienes-forman.html"
+      >
+        <img
+          src="assets/images/ideas/formar-a-quienes-forman.webp"
+          alt="Formar a quienes forman"
+        >
+      </a>
+
+      <div class="home-idea-content">
+
+        <p class="eyebrow">
+          Formación docente
+        </p>
+
+        <h3>
+          Formar a quienes forman
+        </h3>
+
+        <p>
+          La actualización docente transforma una práctica profesional
+          y también las oportunidades de aprendizaje de cientos
+          de estudiantes.
+        </p>
+
+        <a
+          class="text-link"
+          href="ideas/formar-a-quienes-forman.html"
+        >
+          Leer idea →
+        </a>
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+    <section class="about shell section" id="sobre-mi">
+      <div class="about-image">
+        <img src="assets/images/sobre-mi/anahi-sobre-mi.webp" alt="Anahí Del Toro">
+      </div>
+      <div class="about-copy">
+        <p class="eyebrow">Sobre mí</p>
+        <h2>Diseño aprendizaje desde la pedagogía, la investigación y la tecnología.</h2>
+        <p>Licenciada en Desarrollo Educativo y egresada de la Maestría en Tecnologías para el Aprendizaje. Diseño experiencias para modalidades presenciales, híbridas y virtuales.</p>
+        <a class="button button-secondary" href="#conversacion">Iniciar una conversación</a>
+      </div>
+    </section>
+
+    <section class="contact shell" id="conversacion">
+      <p class="eyebrow">Conversación</p>
+      <h2>Las mejores experiencias de aprendizaje comienzan con una buena conversación.</h2>
+      <div class="contact-actions">
+        <a class="button button-primary" href="mailto:anahideltoro@gmail.com">Escribirme</a>
+        <a class="text-link" href="#">LinkedIn →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <div><strong>Anahí Del Toro</strong><br><span>Pedagogía · Diseño · Tecnología</span></div>
+    <p>© 2026 Anahí Del Toro</p>
+  </footer>
+
+  <script>
+    const menuButton=document.querySelector('.menu-button');
+    const mainNav=document.querySelector('.main-nav');
+    if(menuButton&&mainNav){
+      menuButton.addEventListener('click',()=>{
+        const open=mainNav.classList.toggle('is-open');
+        menuButton.setAttribute('aria-expanded',String(open));
+      });
+      mainNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+        mainNav.classList.remove('is-open');
+        menuButton.setAttribute('aria-expanded','false');
+      }));
+    }
+
+
+    const revealElements=document.querySelectorAll(".reveal");
+
+    if("IntersectionObserver" in window){
+      const revealObserver=new IntersectionObserver(
+        (entries,observer)=>{
+          entries.forEach((entry)=>{
+            if(!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          });
+        },
+        {
+          threshold:.12,
+          rootMargin:"0px 0px -40px 0px"
+        }
+      );
+
+      revealElements.forEach((element)=>{
+        revealObserver.observe(element);
+      });
+    }else{
+      revealElements.forEach((element)=>{
+        element.classList.add("is-visible");
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Caso de estudio: diseño de experiencias activas y recursos digitales para la enseñanza del inglés en bachillerato.">
+  <title>Inglés para Bachillerato | Anahí Del Toro</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --ivory:#fbfaf7;
+      --white:#ffffff;
+      --graphite:#242628;
+      --muted:#6f6c68;
+      --teal:#0d5656;
+      --burgundy:#9c1625;
+      --paper:#f3eee8;
+      --line:#ded9d2;
+      --shadow:0 18px 50px rgba(37,35,31,.09);
+      --radius-xl:30px;
+      --radius-lg:24px;
+      --radius-md:18px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--ivory);
+      color:var(--graphite);
+      font-family:"DM Sans",system-ui,sans-serif;
+      line-height:1.65;
+    }
+    img{display:block;width:100%}
+    a{color:inherit;text-decoration:none}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,h3{font-family:"Playfair Display",Georgia,serif;letter-spacing:-.035em}
+    em{color:var(--burgundy)}
+    .shell{width:min(1320px,calc(100% - 64px));margin-inline:auto}
+    .section{padding:100px 0}
+    .eyebrow{
+      margin:0 0 16px;
+      color:var(--teal);
+      font-size:.76rem;
+      font-weight:700;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+    .text-link{color:var(--teal);font-weight:700}
+
+    /* Header */
+    .site-header{
+      position:sticky;
+      top:16px;
+      z-index:50;
+      width:min(1440px,calc(100% - 32px));
+      min-height:96px;
+      margin:16px auto 0;
+      padding:16px 20px 16px 28px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      background:rgba(251,250,247,.94);
+      border:1px solid var(--line);
+      border-radius:30px;
+      backdrop-filter:blur(14px);
+    }
+    .brand{width:150px}
+    .brand img{height:56px;object-fit:contain;object-position:left center}
+    .main-nav{display:flex;align-items:center;gap:25px;font-weight:700}
+    .main-nav a{font-size:.92rem;white-space:nowrap}
+    .nav-cta{padding:13px 22px;color:#fff;background:var(--burgundy);border-radius:999px}
+    .menu-button{
+      display:none;
+      width:46px;
+      height:46px;
+      padding:0;
+      place-content:center;
+      gap:5px;
+      border:1px solid var(--line);
+      border-radius:50%;
+      background:var(--white);
+    }
+    .menu-button span{width:20px;height:2px;background:var(--graphite)}
+
+    /* Hero */
+    .case-hero{
+      padding:78px 0 54px;
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:70px;
+      align-items:center;
+    }
+    .back-link{display:inline-block;margin-bottom:48px;color:var(--muted);font-size:.9rem}
+    .case-hero h1{margin-bottom:24px;font-size:clamp(4.6rem,7vw,7.4rem);line-height:.95}
+    .case-intro{max-width:640px;color:var(--teal);font-size:1.2rem;font-weight:600}
+    .case-hero-image{
+      overflow:hidden;
+      min-height:620px;
+      border-radius:0 0 0 110px;
+      box-shadow:var(--shadow);
+    }
+    .case-hero-image img{height:620px;object-fit:cover}
+    .case-meta{
+      margin-top:40px;
+      padding-top:28px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+      border-top:1px solid var(--line);
+    }
+    .case-meta strong,.case-meta span{display:block}
+    .case-meta strong{color:var(--teal);font-size:.78rem;text-transform:uppercase;letter-spacing:.12em}
+    .case-meta span{margin-top:6px;color:var(--muted);font-size:.9rem}
+
+    /* Reto y contribución */
+    .two-column{display:grid;grid-template-columns:1fr 1fr;gap:76px}
+    .section-title{margin-bottom:24px;font-size:clamp(3rem,5vw,4.8rem);line-height:1}
+    .body-copy{color:var(--muted);font-size:1.06rem}
+    .body-copy p{margin-bottom:1.4em}
+    .contribution-list{list-style:none;margin:26px 0 0;padding:0}
+    .contribution-list li{
+      position:relative;
+      margin-bottom:15px;
+      padding-left:30px;
+      color:var(--graphite);
+    }
+    .contribution-list li::before{
+      content:"✓";
+      position:absolute;
+      left:0;
+      top:0;
+      color:var(--teal);
+      font-weight:700;
+    }
+
+    /* Decisiones */
+    .decisions{background:var(--paper)}
+    .decisions-heading{max-width:840px;margin-bottom:38px}
+    .decisions-heading h2{font-size:clamp(3.2rem,5vw,5rem);line-height:1.02;margin-bottom:14px}
+    .decisions-heading p{color:var(--muted);font-size:1.04rem}
+    .decision-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .decision-card{
+      min-height:250px;
+      padding:28px 26px;
+      display:flex;
+      flex-direction:column;
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:18px;
+      transition:transform .25s ease,box-shadow .25s ease;
+    }
+    .decision-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .decision-dot{
+      width:46px;
+      height:46px;
+      margin-bottom:28px;
+      display:block;
+      background:#e3efee;
+      border-radius:50%;
+    }
+    .decision-card:nth-child(2) .decision-dot{background:#e5eef2}
+    .decision-card:nth-child(3) .decision-dot{background:#f2ebd7}
+    .decision-card:nth-child(4) .decision-dot{background:#f1e5eb}
+    .decision-card h3{margin-bottom:14px;font-size:1.48rem;line-height:1.14}
+    .decision-card p{margin:0;color:var(--muted);font-size:.92rem;line-height:1.6}
+
+    /* Evidencias */
+    .evidence-heading{margin-bottom:30px}
+    .evidence-heading h2{font-size:clamp(3.2rem,5vw,5rem);line-height:1;margin-bottom:8px}
+    .evidence-heading p{margin:0;color:var(--muted)}
+    .evidence-grid{
+      display:grid;
+      grid-template-columns:1.22fr .78fr;
+      grid-template-rows:290px 290px;
+      gap:16px;
+    }
+    .evidence-item{
+      position:relative;
+      overflow:hidden;
+      margin:0;
+      border-radius:10px;
+      background:var(--paper);
+    }
+    .evidence-item--primary{grid-row:1/3}
+    .evidence-item img{height:100%;object-fit:cover;transition:transform .45s ease}
+    .evidence-item:hover img{transform:scale(1.025)}
+    .evidence-caption{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      padding:32px 18px 14px;
+      color:#fff;
+      background:linear-gradient(transparent,rgba(0,0,0,.72));
+      font-size:.82rem;
+      font-weight:700;
+    }
+
+    /* Recursos */
+    .resources-section{background:#f6f7f6}
+    .resources-heading{max-width:860px;margin-bottom:42px}
+    .resources-heading h2{margin-bottom:18px;font-size:clamp(3.2rem,5vw,5rem);line-height:1}
+    .resources-heading p{color:var(--muted);font-size:1.02rem}
+    .resources-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .resource-card{
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:22px;
+      transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+    }
+    .resource-card:hover{
+      transform:translateY(-6px);
+      border-color:#b9c9c7;
+      box-shadow:var(--shadow);
+    }
+    .resource-preview{aspect-ratio:16/10;overflow:hidden;background:var(--paper)}
+    .resource-preview img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+    .resource-card:hover .resource-preview img{transform:scale(1.035)}
+    .resource-copy{padding:24px;display:flex;flex-direction:column;flex:1}
+    .resource-copy .eyebrow{margin-bottom:10px;color:var(--muted)}
+    .resource-copy h3{margin-bottom:12px;font-size:1.45rem;line-height:1.15}
+    .resource-copy p{margin-bottom:22px;color:var(--muted);font-size:.92rem;line-height:1.6}
+    .resource-action{
+      margin-top:auto;
+      padding-top:18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      color:var(--teal);
+      border-top:1px solid var(--line);
+      font-weight:700;
+    }
+    .resource-action::after{content:"→";font-size:1.1rem;transition:transform .2s ease}
+    .resource-card:hover .resource-action::after{transform:translateX(4px)}
+
+    /* Resultados */
+    .results{
+      padding:80px 0;
+      color:#fff;
+      background:var(--teal);
+    }
+    .results-heading{max-width:760px;margin-bottom:38px}
+    .results-heading .eyebrow{color:#c5e7e4}
+    .results-heading h2{margin-bottom:14px;font-size:clamp(3rem,4.8vw,4.8rem);line-height:1}
+    .results-heading p{margin:0;color:#d4e9e7}
+    .results-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .result{
+      min-height:190px;
+      padding:28px 30px;
+      display:flex;
+      align-items:flex-end;
+      border-left:1px solid rgba(255,255,255,.3);
+    }
+    .result:first-child{border-left:0}
+    .result strong{
+      display:block;
+      max-width:220px;
+      font-family:"Playfair Display",Georgia,serif;
+      font-size:clamp(1.7rem,2.5vw,2.7rem);
+      line-height:1.08;
+    }
+
+    /* Reflexión */
+    .reflection{display:grid;grid-template-columns:.72fr 1.28fr;gap:78px;align-items:start}
+    .reflection h2{font-size:clamp(3.1rem,5vw,5rem);line-height:.98}
+    .reflection-copy{
+      padding-top:12px;
+      color:var(--muted);
+      font-family:"DM Sans",system-ui,sans-serif;
+      font-size:1rem;
+      line-height:1.72;
+    }
+
+    /* Navegación final */
+    .next-case{
+      margin-bottom:80px;
+      padding:50px 0;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:30px;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    .next-case small{display:block;margin-bottom:8px;color:var(--muted)}
+    .next-case strong{font-family:"Playfair Display",Georgia,serif;font-size:1.55rem}
+
+    .site-footer{
+      padding:0 0 48px;
+      display:flex;
+      justify-content:space-between;
+      color:var(--muted);
+    }
+
+    /* Animaciones */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.is-visible{opacity:1;transform:none}
+
+    @media(max-width:1100px){
+      .main-nav{gap:14px}
+      .main-nav a{font-size:.85rem}
+      .case-hero{grid-template-columns:1fr}
+      .case-hero-image,.case-hero-image img{height:560px;min-height:560px}
+      .decision-grid{grid-template-columns:repeat(2,1fr)}
+      .resources-grid{grid-template-columns:repeat(2,1fr)}
+      .results-grid{grid-template-columns:repeat(2,1fr);row-gap:24px}
+      .result:nth-child(3){border-left:0}
+    }
+
+    @media(max-width:860px){
+      .menu-button{display:grid}
+      .main-nav{
+        display:none;
+        position:absolute;
+        top:calc(100% + 8px);
+        left:0;
+        right:0;
+        padding:22px;
+        flex-direction:column;
+        align-items:stretch;
+        background:var(--ivory);
+        border:1px solid var(--line);
+        border-radius:22px;
+        box-shadow:var(--shadow);
+      }
+      .main-nav.is-open{display:flex}
+      .nav-cta{text-align:center}
+      .case-meta{grid-template-columns:repeat(2,1fr)}
+      .two-column,.reflection{grid-template-columns:1fr;gap:46px}
+      .evidence-grid{grid-template-columns:1fr;grid-template-rows:360px 280px 280px}
+      .evidence-item--primary{grid-row:auto}
+    }
+
+    @media(max-width:640px){
+      .shell{width:min(100% - 24px,1320px)}
+      .section{padding:76px 0}
+      .site-header{
+        width:calc(100% - 16px);
+        top:8px;
+        margin-top:8px;
+        min-height:auto;
+        padding:12px 14px;
+      }
+      .brand{width:124px}
+      .brand img{height:46px}
+      .case-hero{padding-top:58px;gap:36px}
+      .case-hero h1{font-size:4rem}
+      .case-hero-image,.case-hero-image img{height:430px;min-height:430px}
+      .case-meta,.decision-grid,.resources-grid,.results-grid{grid-template-columns:1fr}
+      .case-meta{gap:14px}
+      .evidence-grid{grid-template-rows:repeat(3,300px)}
+      .result,.result:nth-child(3){border-left:0;border-top:1px solid rgba(255,255,255,.3)}
+      .result:first-child{border-top:0}
+      .next-case,.site-footer{align-items:flex-start;flex-direction:column}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}
+      .reveal{opacity:1;transform:none}
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../index.html" aria-label="Volver al inicio">
+      <img src="../../assets/logo-anahi-del-toro.png" alt="Anahí Del Toro">
+    </a>
+
+    <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="../../index.html">Inicio</a>
+      <a href="../../index.html#en-que-creo">En qué creo</a>
+      <a href="../index.html">Casos</a>
+      <a href="../../index.html#como-trabajo">Cómo trabajo</a>
+      <a href="../../index.html#laboratorio">Laboratorio</a>
+      <a href="../../ideas/index.html">Ideas</a>
+      <a href="../../index.html#sobre-mi">Sobre mí</a>
+      <a class="nav-cta" href="../../index.html#conversacion">Conversación</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="case-hero shell">
+      <div>
+        <a class="back-link" href="../index.html">← Volver a casos</a>
+        <p class="eyebrow">Caso 02 · Lengua Extranjera</p>
+        <h1>Inglés para Bachillerato</h1>
+        <p class="case-intro">
+          Rediseñar la experiencia para que aprender inglés implicara participar,
+          comprender y utilizar el idioma en situaciones más significativas.
+        </p>
+
+        <div class="case-meta">
+          <div><strong>Proyecto</strong><span>Lengua Extranjera</span></div>
+          <div><strong>Nivel</strong><span>Bachillerato</span></div>
+          <div><strong>Modalidad</strong><span>Presencial + recursos digitales</span></div>
+          <div><strong>Contexto</strong><span>BGC y Bachillerato General</span></div>
+        </div>
+      </div>
+
+      <figure class="case-hero-image">
+        <img
+          src="../../assets/images/caso-02-lengua-extranjera/hero-caso-02.webp"
+          alt="Curso de Lengua Extranjera para Bachillerato"
+        >
+      </figure>
+    </section>
+
+    <section class="section shell" id="reto">
+      <div class="two-column">
+        <article class="reveal">
+          <p class="eyebrow">El reto</p>
+          <h2 class="section-title">Pasar de repetir estructuras a utilizar el idioma.</h2>
+
+          <div class="body-copy">
+            <p>
+              El proyecto se desarrolló en las unidades de aprendizaje de Lengua Extranjera III,
+              Lengua Extranjera IV e Inglés Nivel 3, dentro del Bachillerato General por Competencias
+              y el Bachillerato General de la Universidad de Guadalajara.
+            </p>
+
+            <p>
+              El principal desafío era favorecer una participación más activa en grupos donde
+              las actividades tradicionales, los ejercicios repetitivos del libro y el uso
+              descontextualizado de la gramática dificultaban mantener el interés y utilizar
+              el inglés en situaciones comprensibles.
+            </p>
+          </div>
+        </article>
+
+        <article class="reveal" id="contribucion">
+          <p class="eyebrow">Mi contribución</p>
+          <h2 class="section-title">Diseño, adaptación y facilitación.</h2>
+
+          <div class="body-copy">
+            <p>
+              Mi trabajo consistió en adaptar el contenido curricular y convertirlo en experiencias
+              más participativas mediante recursos digitales, actividades contextualizadas
+              y estrategias de aprendizaje activo.
+            </p>
+          </div>
+
+          <ul class="contribution-list">
+            <li>Diseño instruccional de actividades de aprendizaje.</li>
+            <li>Adaptación del contenido curricular a situaciones comprensibles.</li>
+            <li>Integración estratégica de herramientas digitales.</li>
+            <li>Facilitación del aprendizaje dentro del aula.</li>
+            <li>Desarrollo de contenidos educativos digitales.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="decisions section" id="decisiones">
+      <div class="shell">
+        <div class="decisions-heading reveal">
+          <p class="eyebrow">Decisiones de diseño</p>
+          <h2>La tecnología debía apoyar la participación, no sustituirla.</h2>
+          <p>
+            Cada decisión buscó que el contenido gramatical dejara de sentirse aislado
+            y pudiera relacionarse con acciones, decisiones y situaciones cercanas.
+          </p>
+        </div>
+
+        <div class="decision-grid">
+          <article class="decision-card reveal">
+            <span class="decision-dot" aria-hidden="true"></span>
+            <h3>Contextualizar la gramática</h3>
+            <p>
+              Los contenidos se vincularon con situaciones reconocibles para evitar
+              que las estructuras se aprendieran como reglas separadas de su uso.
+            </p>
+          </article>
+
+          <article class="decision-card reveal">
+            <span class="decision-dot" aria-hidden="true"></span>
+            <h3>Preparar antes de la clase</h3>
+            <p>
+              El video educativo permitió revisar la explicación del pasado simple
+              previamente y aprovechar el tiempo de aula para practicar y resolver dudas.
+            </p>
+          </article>
+
+          <article class="decision-card reveal">
+            <span class="decision-dot" aria-hidden="true"></span>
+            <h3>Diagnosticar jugando</h3>
+            <p>
+              La gamificación permitió explorar el nivel del grupo de forma menos intimidante
+              y recuperar información útil para orientar las actividades posteriores.
+            </p>
+          </article>
+
+          <article class="decision-card reveal">
+            <span class="decision-dot" aria-hidden="true"></span>
+            <h3>Diseñar para participar</h3>
+            <p>
+              Las actividades se plantearon para que el estudiante tomara decisiones,
+              produjera respuestas y utilizara el idioma, no solo completara ejercicios.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="evidencias">
+      <div class="evidence-heading reveal">
+        <h2>La experiencia.</h2>
+        <p>
+          Las evidencias muestran el entorno y los recursos utilizados sin exponer
+          la identidad de los estudiantes participantes.
+        </p>
+      </div>
+
+      <div class="evidence-grid">
+        <figure class="evidence-item evidence-item--primary reveal">
+          <img
+            src="../../assets/images/caso-02-lengua-extranjera/galeria-01.webp"
+            alt="Experiencia de aprendizaje de Lengua Extranjera"
+          >
+          <figcaption class="evidence-caption">El contenido se llevó a situaciones de uso.</figcaption>
+        </figure>
+
+        <figure class="evidence-item reveal">
+          <img
+            src="../../assets/images/caso-02-lengua-extranjera/galeria-02.webp"
+            alt="Recurso digital de apoyo para inglés"
+          >
+          <figcaption class="evidence-caption">Los recursos acompañaron la práctica.</figcaption>
+        </figure>
+
+        <figure class="evidence-item reveal">
+          <img
+            src="../../assets/images/caso-02-lengua-extranjera/galeria-03.webp"
+            alt="Actividad contextualizada de Lengua Extranjera"
+          >
+          <figcaption class="evidence-caption">La participación fue parte del diseño.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="resources-section section" id="recursos">
+      <div class="shell">
+        <div class="resources-heading reveal">
+          <p class="eyebrow">Recursos desarrollados</p>
+          <h2>Explora las experiencias desarrolladas.</h2>
+          <p>
+            Cada recurso respondió a una necesidad concreta: explicar, practicar
+            o diagnosticar. Selecciona una tarjeta para conocerlo dentro del Laboratorio.
+          </p>
+        </div>
+
+        <div class="resources-grid">
+          <a class="resource-card reveal" href="../../laboratorio/simple-past.html">
+            <div class="resource-preview">
+              <img
+                src="../../assets/images/caso-02-lengua-extranjera/recurso-simple-past.webp"
+                alt="Vista previa del video Simple past of regular and irregular verbs"
+              >
+            </div>
+
+            <div class="resource-copy">
+              <p class="eyebrow">Video educativo</p>
+              <h3>Simple past of regular and irregular verbs</h3>
+              <p>
+                Recurso para comprender el uso del pasado simple y preparar
+                la práctica mediante una estrategia de aula invertida.
+              </p>
+              <span class="resource-action">Abrir en Laboratorio</span>
+            </div>
+          </a>
+
+          <a class="resource-card reveal" href="../../laboratorio/be-going-to-practice.html">
+            <div class="resource-preview">
+              <img
+                src="../../assets/images/caso-02-lengua-extranjera/recurso-going-to.webp"
+                alt="Vista previa de Be going to practice"
+              >
+            </div>
+
+            <div class="resource-copy">
+              <p class="eyebrow">Actividad de práctica</p>
+              <h3>Be going to practice</h3>
+              <p>
+                Hoja de trabajo visual y contextualizada para reforzar
+                la formulación de planes e intenciones futuras.
+              </p>
+              <span class="resource-action">Abrir en Laboratorio</span>
+            </div>
+          </a>
+
+          <a class="resource-card reveal" href="../../laboratorio/ruleta-diagnostica.html">
+            <div class="resource-preview">
+              <img
+                src="../../assets/images/caso-02-lengua-extranjera/recurso-ruleta-diagnostica.webp"
+                alt="Vista previa de la Ruleta diagnóstica"
+              >
+            </div>
+
+            <div class="resource-copy">
+              <p class="eyebrow">Actividad gamificada</p>
+              <h3>Ruleta diagnóstica</h3>
+              <p>
+                Recurso para explorar el nivel de inglés del grupo mediante
+                preguntas y retos en una dinámica menos intimidante.
+              </p>
+              <span class="resource-action">Abrir en Laboratorio</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="results" id="resultados">
+      <div class="shell">
+        <div class="results-heading reveal">
+          <p class="eyebrow">Resultados</p>
+          <h2>El aprendizaje se volvió más activo y visible.</h2>
+          <p>
+            Al no contar con métricas cuantitativas consolidadas, los resultados se presentan
+            desde los cambios observados en la experiencia de aprendizaje.
+          </p>
+        </div>
+
+        <div class="results-grid">
+          <div class="result reveal">
+            <strong>Experiencias rediseñadas</strong>
+          </div>
+
+          <div class="result reveal">
+            <strong>Estrategias digitales integradas</strong>
+          </div>
+
+          <div class="result reveal">
+            <strong>Mayor participación e interés</strong>
+          </div>
+
+          <div class="result reveal">
+            <strong>Uso más activo y contextual del idioma</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="confirmo">
+      <div class="reflection">
+        <div class="reveal">
+          <p class="eyebrow">Lo que este proyecto confirmó</p>
+          <h2>Enseñar un idioma implica diseñar oportunidades para utilizarlo.</h2>
+        </div>
+
+        <div class="reflection-copy reveal">
+          Este proyecto confirmó que aprender un idioma requiere mucho más que completar
+          ejercicios. Cuando la gramática se conecta con situaciones comprensibles,
+          recursos atractivos y oportunidades reales de participación, el estudiante
+          deja de repetir estructuras y comienza a utilizarlas con mayor confianza.
+          La tecnología dejó de ser un complemento para convertirse en una herramienta
+          que favorece la participación y el aprendizaje.
+        </div>
+      </div>
+    </section>
+
+    <nav class="next-case shell">
+      <a href="../index.html">
+        <small>Volver</small>
+        <strong>Todos los casos</strong>
+      </a>
+
+      <a href="../clasificacion-trastornos/clasificacion-trastornos.html" style="text-align:right">
+        <small>Siguiente caso</small>
+        <strong>Clasificación de Síndromes y Trastornos Mentales →</strong>
+      </a>
+    </nav>
+  </main>
+
+  <footer class="site-footer shell">
+    <div><strong>Anahí Del Toro</strong><br>Pedagogía · Diseño · Tecnología</div>
+    <p>© 2026 Anahí Del Toro</p>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector(".menu-button");
+    const mainNav = document.querySelector(".main-nav");
+
+    if (menuButton && mainNav) {
+      menuButton.addEventListener("click", () => {
+        const open = mainNav.classList.toggle("is-open");
+        menuButton.setAttribute("aria-expanded", String(open));
+      });
+
+      mainNav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mainNav.classList.remove("is-open");
+          menuButton.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries, currentObserver) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            currentObserver.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -40px 0px"
+        }
+      );
+
+      revealElements.forEach((element) => observer.observe(element));
+    } else {
+      revealElements.forEach((element) => element.classList.add("is-visible"));
+    }
+  </script>
+</body>
+</html>
